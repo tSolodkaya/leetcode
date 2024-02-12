@@ -13,19 +13,6 @@
 // Output: ""
 // Explanation: There is no common prefix among the input strings.
 
-// const longestCommonPrefix = function (words) {
-//   let prefix = words[0];
-
-//   for (const word of words) {
-//     for (let i = prefix.length - 1; i >= 0; i -= 1) {
-//       if (prefix[i] !== word[i]) {
-//         prefix = prefix.slice(0, i);
-//       }
-//     }
-//   }
-//   return prefix;
-// };
-
 const longestCommonPrefix = function (words) {
   let prefix = words[0];
 
