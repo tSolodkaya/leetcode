@@ -19,9 +19,6 @@
 
 const isPalindrome = function (x) {
   const reverseNumber = String(x).split("").reverse().join("");
-  if (String(x).length < 2) {
-    return false;
-  }
   return String(x) === reverseNumber;
 };
 
