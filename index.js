@@ -21,51 +21,38 @@
 // Input: s = "(]"
 // Output: false
 
-const isValid = function (string) {
-  let result = [];
-  let isTrue = false;
+const isValid = function (s) {
+  const open = {
+    "(": "(",
+    "{": "{",
+    "[": "[",
+  };
 
-  if (string.length < 2) {
-    `This string is ${isTrue}`;
-  }
+  const close = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
 
-  for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === "(" && string[i + 1] === ")") {
-      result.push(true);
+  const stack = [];
+
+  for (const br of s) {
+    if (br in open) {
+      stack.push(br);
     }
-
-    if (string[i] === ")" && string[i - 1] === "(") {
-      result.push(true);
-    }
-
-    if (string[i] === "{" && string[i + 1] === "}") {
-      result.push(true);
-    }
-
-    if (string[i] === "}" && string[i - 1] === "{") {
-      result.push(true);
-    }
-    if (string[i] === "[" && string[i + 1] === "]") {
-      result.push(true);
-    }
-
-    if (string[i] === "]" && string[i - 1] === "[") {
-      result.push(true);
+    if (br in close && stack.pop() !== close[br]) {
+      return false;
     }
   }
 
-  if (result.length === string.length) {
-    isTrue = true;
-  }
-
-  return `This string is ${isTrue}`;
+  return !stack.length;
 };
 
-console.log(isValid("()"));
-console.log(isValid(")()"));
-console.log(isValid("()[]{}"));
-console.log(isValid("(]"));
-console.log(isValid("("));
-console.log(isValid("()}[]{}"));
-console.log(isValid("()}[]{}[[["));
-console.log(isValid("()()()()[]{}"));
+console.log(`true: `, isValid("()()()()[]{}"));
+console.log(`false: `, isValid(")()"));
+console.log(`false: `, isValid("(]"));
+console.log(`false: `, isValid("("));
+console.log(`false: `, isValid("()}[]{}"));
+console.log(`false: `, isValid("()}[]{}[[["));
+console.log(`true: `, isValid("({[]})"));
+console.log(`true: `, isValid("{[]}"));
