@@ -201,3 +201,478 @@ usersById = {
 
 // console.log(usersById);
 //==========================================================================================================================
+
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+
+// let values = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
+// ];
+
+// console.log(unique(values));
+//============================================================================================================================
+
+// function aclean(arr) {
+//   const sortedWords = arr.map((elem) =>
+//     elem
+//       .toLowerCase()
+//       .split("")
+//       .sort((a, b) => a.localeCompare(b))
+//       .join("")
+//   );
+
+//   return Array.from(new Set(sortedWords));
+// }
+
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+// console.log(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
+//===========================================================================================================================
+
+// let map = new Map();
+
+// map.set("name", "John");
+
+// let keys = Array.from(map.keys());
+
+// keys.push("more");
+
+// console.log(keys);
+//===========================================================================================================================
+
+// let salaries = {
+//   John: 100,
+//   Pete: 300,
+//   Mary: 250,
+// };
+
+// console.log(sumSalaries(salaries)); // 650
+
+// function sumSalaries(obj) {
+//   let sum = 0;
+//   for (let elem of Object.values(obj)) {
+//     sum += elem;
+//   }
+
+//   return sum;
+// }
+//==========================================================================================================================
+
+// let user = {
+//   name: "John",
+//   age: 30,
+// };
+
+// console.log(count(user)); // 2
+
+// function count(obj) {
+//   return Object.keys(obj).length;
+// }
+//============================================================================================================================
+// let salaries = {
+//   John: 100,
+//   Pete: 300,
+//   Mary: 250,
+// };
+
+// function topSalary(salaries) {
+//   let maxSalary = 0;
+//   let topName = "Noone";
+//   for (let [name, salary] of Object.entries(salaries)) {
+//     if (salary > maxSalary) {
+//       maxSalary = salary;
+//       topName = name;
+//     }
+//   }
+
+//   return `Top salsry is taken by ${topName} and it is ${maxSalary}`;
+// }
+// console.log("🚀 ~ topSalary:", topSalary(salaries));
+//==================================================================================================================================
+
+// // до вызова функции
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu",
+// };
+
+// multiplyNumeric(menu);
+
+// function multiplyNumeric(menu) {
+//   for (let key of Object.keys(menu)) {
+//     if (!isNaN(menu[key])) {
+//       menu[key] *= 2;
+//     }
+//   }
+// }
+
+// console.log(menu);
+//==================================================================================================================================
+// let calculator = {
+//   a: 0,
+//   b: 0,
+//   read() {
+//     this.a = prompt("Enter the first number: ", 0);
+//     this.b = prompt("Enter the second number: ", 0);
+//   },
+
+//   sum() {
+//     return Number(this.a) + Number(this.b);
+//   },
+
+//   mul() {
+//     return this.a * this.b;
+//   },
+// };
+
+// calculator.read();
+// console.log(calculator.sum());
+// console.log(calculator.mul());
+//====================================================================================================================================
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep: function () {
+//     // показывает текущую ступеньку
+//     console.log(this.step);
+//     return this;
+//   },
+// };
+
+// ladder.up().up().down().showStep().down().showStep(); // показывает 1 затем 0
+//======================================================================================================================================
+
+// function Calculator() {
+//   this.a = 0;
+//   this.b = 0;
+//   this.read = function () {
+//     this.a = prompt("a?", 0);
+//     this.b = prompt("b?", 0);
+//   };
+//   this.sum = function () {
+//     return this.a + this.b;
+//   };
+
+//   this.mul = function () {
+//     return this.a * this.b;
+//   };
+// }
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// console.log("Sum=" + calculator.sum());
+// console.log("Mul=" + calculator.mul());
+//========================================================================================================================================
+// function Accumulator(startingValue) {
+//   this.value = startingValue;
+
+//   this.read = function () {
+//     this.value = this.value + Number(prompt("Enter your number"));
+//   };
+// }
+
+// let accumulator = new Accumulator(1); // начальное значение 1
+
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+
+// console.log(accumulator.value); // выведет сумму этих значений
+//======================================================================================================================================
+// const date = new Date(2024, 1, 12, 3, 15, 25);
+// // console.log("🚀 ~ date:", date);
+// // console.log(date.getFullYear());
+// // console.log(date.getDay());
+
+// const GMdate = new Date();
+// console.log("🚀 ~ GMdate:", GMdate);
+// console.log(`G: ${GMdate.getHours()}`);
+//=======================================================================================================================================
+
+// function pow(a, n) {
+//   if (n === 1) {
+//     return a;
+//   } else {
+//     return a * pow(a, n - 1);
+//   }
+// }
+
+// console.log(pow(2, 2));
+// console.log(pow(2, 3));
+// console.log(pow(2, 4));
+//======================================================================================================================================
+// let company = {
+//   sales: [
+//     { name: "John", salary: 1000 },
+//     { name: "Alice", salary: 600 },
+//   ],
+//   development: {
+//     sites: [
+//       { name: "Peter", salary: 2000 },
+//       { name: "Alex", salary: 1800 },
+//     ],
+//     internals: [{ name: "Jack", salary: 1300 }],
+//   },
+// };
+
+// function sumSalaries(company) {
+//   if (Array.isArray(company)) {
+//     return company.reduce((acc, elem) => acc + elem.salary, 0);
+//   } else {
+//     let sum = 0;
+//     for (let sub of Object.values(company)) {
+//       sum += sumSalaries(sub);
+//     }
+//     return sum;
+//   }
+// }
+// console.log(sumSalaries(company));
+//========================================================================================================================================
+
+// function sumTo(n) {
+//  if(n < 1){
+//   return n;
+//  }else{
+//   let sum = 0;
+//   sum = n + sumTo
+//  }
+// }
+// console.log(sumTo(1));
+// console.log(sumTo(2));
+// console.log(sumTo(3));
+// console.log(sumTo(4));
+//======================================================================================================================================
+// function factorial(n) {
+//   if (n === 1) {
+//     return n;
+//   } else {
+//     let mul = 1;
+//     mul = n * factorial(n - 1);
+//     return mul;
+//   }
+// }
+
+// console.log(factorial(2));
+// console.log(factorial(3));
+// console.log(factorial(4));
+//======================================================================================================================================
+// function duplicateEncode(word) {
+//   const arr = word.toLowerCase().split("");
+//   const sum = [];
+//   for (let a of arr) {
+//     arr.indexOf(a) === arr.lastIndexOf(a) ? sum.push("(") : sum.push(")");
+//   }
+//   return sum.join("");
+// }
+// console.log("🚀 ~ (((:", duplicateEncode("din"));
+// console.log("🚀 ~ ()()():", duplicateEncode("recede"));
+// console.log("🚀 ~ )())()):", duplicateEncode("Success"));
+// console.log("🚀 ~ ))((:", duplicateEncode("(( @"));
+//===========================================================================================================================
+
+// function digPow(n, p) {
+//   const arr = String(n)
+//     .split("")
+//     .map((e) => Number(e));
+
+//   let i = p;
+
+//   const sum = arr.reduce((acc, elem) => {
+//     acc += elem ** i;
+//     i += 1;
+//     return acc;
+//   }, 0);
+
+//   const res = sum % n === 0 ? sum / n : -1;
+//   return res;
+// }
+
+// console.log("🚀 ~ 1:", digPow(89, 1));
+// console.log("🚀 ~ 2:", digPow(695, 2));
+// console.log("🚀 ~ 51:", digPow(46288, 3));
+// console.log("🚀 ~ -1:", digPow(92, 1));
+//============================================================================================================================
+// function order(words) {
+//   const arr = words.split(" ");
+//   const result = [];
+
+//   arr.map((elem, i, array) => {
+//     const index = Number(elem.split("").find((elem) => !isNaN(elem)));
+//     result[index - 1] = elem;
+//   });
+//   return result.join(" ");
+// }
+
+// console.log("🚀 ~ order:", order("is2 Thi1s T4est 3a"));
+// console.log("🚀 ~ order:", order("4of Fo1r pe6ople g3ood th5e the2"));
+// console.log("🚀 ~ order:", order(""));
+//============================================================================================================================
+// function likes(names) {
+//   if (names.length === 1) {
+//     return `${names[0]} likes this`;
+//   }
+
+//   if (names.length === 2) {
+//     return `${names[0]} and ${names[1]} like this`;
+//   }
+
+//   if (names.length === 3) {
+//     return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+//   }
+
+//   if (names.length > 3) {
+//     return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
+//   }
+
+//   return "no one likes this";
+// }
+
+// console.log(likes([])); // "no one likes this"
+// console.log(likes(["Peter"])); //"Peter likes this"
+// console.log(likes(["Jacob", "Alex"])); // "Jacob and Alex like this
+// console.log(likes(["Max", "John", "Mark"])); //"Max, John and Mark like this
+// console.log(likes(["Alex", "Jacob", "Mark", "Max"])); //"Alex, Jacob and 2 others like this"
+//=============================================================================================================================
+// function whichCashier(already, friends) {
+//   let indexOfArraysWithFriends = [];
+
+//   const sortedByLength = already.toSorted((a, b) => a.length - b.length);
+
+//   for (let friend of friends) {
+//     //  console.log(sortedByLength);
+//     // console.log(friend);
+//     indexOfArraysWithFriends.push(
+//       sortedByLength.findIndex((elem) => elem.includes(friend))
+//     );
+//   }
+
+//   if (indexOfArraysWithFriends.length > 1) {
+//     return indexOfArraysWithFriends[0];
+//   }
+//   return already.indexOf(sortedByLength[0]);
+// }
+
+// console.log(
+//   whichCashier(
+//     [["July", "Sand", "Desong", "Linda"], ["Goly"], ["Keven", "Lax"]],
+//     ["Linda", "Keven"]
+//   )
+// ); //2
+// console.log(
+//   whichCashier([["Lax", "Bola"], ["Sint"], ["Fason", "Dit"]], ["Sint", "Fason"])
+// ); //1
+// console.log(
+//   whichCashier(
+//     [
+//       ["Bingo", "Lora"],
+//       ["Kint", "Masons"],
+//       ["Relade", "Ginta"],
+//     ],
+//     []
+//   )
+// );
+//=======================================================================================================================================
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+// console.log(arr.filter(inBetween(3, 6))); // 3,4,5,6
+// console.log(arr.filter(inArray([1, 2, 10]))); // 1,2
+
+// function inBetween(a, b) {
+//   return function (elem) {
+//     return elem >= a && elem <= b;
+//   };
+// }
+
+// function inArray(arr) {
+//   return function (elem) {
+//     return arr.includes(elem);
+//   };
+// }
+//=======================================================================================================================================
+// let users = [
+//   { name: "John", age: 20, surname: "Johnson" },
+//   { name: "Pete", age: 18, surname: "Peterson" },
+//   { name: "Ann", age: 19, surname: "Hathaway" },
+// ];
+
+// users.sort(byField("name"));
+// //users.sort(byField("age"));
+
+// function byField(fieldName) {
+//   return (a, b) => (a[fieldName] > b[fieldName] ? 1 : -1);
+// }
+
+// console.log(users);
+//=====================================================================================================================================
+
+// function makeCounter() {
+//   makeCounter.count = 0;
+
+//   makeCounter.set = function (value) {
+//     makeCounter.count = value;
+//   };
+
+//   makeCounter.decrease = function () {
+//     makeCounter.count--;
+//   };
+
+//   return function counter() {
+//     makeCounter.count++;
+//   };
+// }
+
+// const counter = makeCounter();
+
+// counter();
+// counter();
+// counter();
+
+// console.log(makeCounter.count);
+
+// makeCounter.set(10);
+// console.log(makeCounter.count);
+
+// makeCounter.decrease();
+// makeCounter.decrease();
+// makeCounter.decrease();
+
+// console.log(makeCounter.count);
+//===============================================================================================================================
+// console.log(sum(1)(2));
+// console.log(sum(1)(2)(3));
+// console.log(sum(5)(-1)(2));
+// console.log(sum(6)(-1)(-2)(-3));
+// console.log(sum(0)(1)(2)(3)(4)(5));
+
+// function sum(value) {
+//   sum.currentValue = value;
+
+//   function fn(b) {
+//     sum.currentValue += b;
+//     console.log(sum.currentValue);
+
+//     return fn;
+//   }
+
+//   fn.toString = function () {
+//     return sum.currentValue;
+//   };
+
+//   return fn;
+// }
+//==================================================================================================================================
