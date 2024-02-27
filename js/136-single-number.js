@@ -27,7 +27,21 @@ const singleNumber = function (nums) {
       return key;
     }
   }
+
+  //More faster works
+  //   if (nums.length===1) {
+  //     return nums[0]
+  // }
+
+  // let result = 0;
+
+  // nums.forEach(element => {
+  //     result = result ^ element
+  // });
+
+  // return result;
 };
+
 console.log(singleNumber([4, 1, 2, 1, 2]));
 console.log(singleNumber([2, 2, 1]));
 console.log(singleNumber([1]));
