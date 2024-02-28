@@ -1,53 +1,36 @@
-// Given two strings s and t, determine if they are isomorphic.
-
-// Two strings s and t are isomorphic if the characters in s can be replaced to get t.
-
-// All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+// Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 // Example 1:
 
-// Input: s = "egg", t = "add"
+// Input: nums = [1,2,3,1]
 // Output: true
 
 // Example 2:
 
-// Input: s = "foo", t = "bar"
+// Input: nums = [1,2,3,4]
 // Output: false
 
 // Example 3:
 
-// Input: s = "paper", t = "title"
+// Input: nums = [1,1,1,3,3,4,3,2,4,2]
 // Output: true
 
-var isIsomorphic = function (s, t) {
-  let obj1 = {};
-  let obj2 = {};
+var containsDuplicate = function (nums) {
+  const set = new Set();
 
-  for (let i = 0; i < s.length; i++) {
-    obj1[s[i]] = t[i];
-    obj2[t[i]] = s[i];
+  for (let elem of nums) {
+    set.add(elem);
   }
 
-  const values = Object.values(obj1);
-  const keys = Object.keys(obj2);
+  console.log(set.size);
 
-  if (Number(s) && Number(t)) {
-    values.sort((a, b) => a - b);
-    keys.sort((a, b) => a - b);
+  if (set.size !== nums.length) {
+    return true;
   }
 
-  for (let i = 0; i < values.length; i += 1) {
-    if (values[i] !== keys[i]) {
-      return false;
-    }
-  }
-
-  return true;
+  return false;
 };
 
-console.log(isIsomorphic("13", "42"));
-console.log(isIsomorphic("foo", "bar"));
-console.log(isIsomorphic("paper", "title"));
-console.log(isIsomorphic("bbbaaaba", "aaabbbba"));
-console.log(isIsomorphic("paper", "tidle"));
-console.log(isIsomorphic("13", "42"));
+console.log(containsDuplicate([1, 2, 3, 1]));
+console.log(containsDuplicate([1, 2, 3, 4]));
+console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
